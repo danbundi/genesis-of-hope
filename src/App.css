@@ -1,38 +1,342 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Home */
+.Hnav, .Anav, .Snav {
+  position: absolute;
+  z-index: 10;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  width: 100%;
+  height: fit-content;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Hlogo, .Alogo, .Slogo {
+  width: 120px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Hlinks ul,
+.Alinks ul,
+.Slinks ul {
+  display: flex;
+  column-gap: 40px;
+}
+
+.Hlinks ul li,
+.Alinks ul li,
+.Slinks ul li {
+  list-style: none;
+  text-decoration: none;
+  position: relative;
+}
+
+.Hlinks ul li .Hlink,
+.Alinks ul li .Alink,
+.Slinks ul li .Slink {
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  padding: 0 7px;
+}
+
+.Hlinks ul li .Hlink:after,
+.Slinks ul li .Slink:after,
+.Alinks ul li .Alink:after {
+  content: "";
+  position: absolute;
+  background-color: green;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.5s;
+}
+
+.Hlinks ul li .Hlink:hover:after,
+.Slinks ul li .Slink:hover:after,
+.Alinks ul li .Alink:hover:after {
+  width: 100%;
+}
+
+
+.HLanding {
+  position: relative;
+  background-image: url("./assets/landing.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+.HLanding .Htext {
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+  row-gap: 25px;
+}
+
+.HLanding .Htext h2 {
+  font-size: 60px;
+  font-weight: 800;
+  color: white;
+}
+
+.HLanding .Htext .Hbtn {
+  height: 45px;
+  width: 120px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 1rem sans-serif;
+  cursor: pointer;
+  will-change: transform;
+  background: transparent;
+  border: 1px solid black;
+  color: black;
+  overflow: hidden;
+}
+
+.HLanding .Htext .Hbtn .Lbtn {
+  font: 1rem sans-serif;
+  color: black;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+}
+
+.HLanding .Htext .Hbtn:hover {
+  color: white;
+}
+
+.HLanding .Htext .Hbtn .Lbtn:hover {
+  color: white;
+}
+
+.HLanding .Htext .Hbtn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  transform: scaleY(0);
+}
+
+.HLanding .Htext .Hbtn:hover::before {
+  transform: scaleY(1);
+}
+
+
+.HLanding .Hpic {
+  width: 40%;
+  position: relative;
+}
+
+.HLanding .Hpic img {
+  width: 50%;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.HLanding .Hpic img:nth-child(1) {
+  bottom: -72px;
+  right: 15px;
+}
+
+.HLanding .Hpic img:nth-child(2) {
+  top: -10px;
+  left: 65px;
+}
+
+/* About Page */
+.Anav, .Snav {
+  padding: 10px 90px;
+  position: static;
+}
+
+hr {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.Amain {
+  padding: 0 90px;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.Amain h1 {
+  margin-bottom: 20px;
+}
+
+.Amain div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding: 7px 0;
+}
+
+.Amain .div {
+  background-color: #0000000c;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+}
+
+.Amain .div:nth-child(1),
+.Amain .div:nth-child(3),
+.Amain .div:nth-child(5) {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.Amain div .Atext {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+}
+
+.Amain div .Atext p {
+  align-self: center;
+}
+
+.Amain div .Aimg {
+  width: 50%;
+  border: 0;
+}
+
+.Amain div .Aimg img {
+  width: 50%;
+}
+
+/* FOOTER */
+footer {
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px 20px 30px;
+  overflow: hidden;
+}
+
+footer h4 {
+  color: black;
+  margin-bottom: 15px;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socials .Flinks_socials {
+  text-decoration: none;
+  color: black;
+  transition: all 0.5s ease-in-out;
+}
+
+.socials .Flinks_socials:hover {
+  transform: rotate(360deg);
+  opacity: 0.6;
+}
+
+.socials .Flinks_socials i {
+  text-decoration: none;
+}
+
+.Fcontact {
+  text-decoration: none;
+  color: black;
+}
+
+/* Services */
+.Slanding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 90px;
+  background-image: url("./assets/photography.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.Slanding .Stext {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.scrolling {
+  height: 100vh;
+  width: 100%;
+  padding: 0 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.scrolling h2:nth-child(1) {
+  align-self: center;
+}
+
+.scrolling .S-services {
+  overflow-x: scroll;
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+  gap: 30px;
+}
+
+
+.scrolling .S-services .servs {
+  width: 70%;
+  height: 500px;
+  padding: 10px 30px;
+  align-content: center;
+  border-radius: 15px;
+  background-color: azure;
+}
+
+.scrolling .S-services .servs h2 {
+  padding-right: 35px;
+  padding-bottom: 10px;
 }
