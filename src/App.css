@@ -5,8 +5,16 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* Home */
-.Hnav, .Anav, .Snav {
+.Hnav, .Snav {
   position: absolute;
   z-index: 10;
   background: transparent;
@@ -18,19 +26,17 @@
   height: fit-content;
 }
 
-.Hlogo, .Alogo, .Slogo {
+.Hlogo, .Slogo {
   width: 120px;
 }
 
 .Hlinks ul,
-.Alinks ul,
 .Slinks ul {
   display: flex;
   column-gap: 40px;
 }
 
 .Hlinks ul li,
-.Alinks ul li,
 .Slinks ul li {
   list-style: none;
   text-decoration: none;
@@ -38,7 +44,6 @@
 }
 
 .Hlinks ul li .Hlink,
-.Alinks ul li .Alink,
 .Slinks ul li .Slink {
   text-decoration: none;
   color: black;
@@ -47,8 +52,7 @@
 }
 
 .Hlinks ul li .Hlink:after,
-.Slinks ul li .Slink:after,
-.Alinks ul li .Alink:after {
+.Slinks ul li .Slink:after {
   content: "";
   position: absolute;
   background-color: green;
@@ -60,8 +64,7 @@
 }
 
 .Hlinks ul li .Hlink:hover:after,
-.Slinks ul li .Slink:hover:after,
-.Alinks ul li .Alink:hover:after {
+.Slinks ul li .Slink:hover:after {
   width: 100%;
 }
 
@@ -168,76 +171,11 @@
   top: -10px;
   left: 65px;
 }
-
-/* About Page */
-.Anav, .Snav {
+.Snav {
   padding: 10px 90px;
   position: static;
 }
 
-hr {
-  color: rgba(0, 0, 0, 0.4);
-}
-
-.Amain {
-  padding: 0 90px;
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.Amain h1 {
-  margin-bottom: 20px;
-}
-
-.Amain div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  border-bottom: 1px solid black;
-  padding: 7px 0;
-}
-
-.Amain .div {
-  background-color: #0000000c;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  padding: 15px 20px;
-}
-
-.Amain .div:nth-child(1),
-.Amain .div:nth-child(3),
-.Amain .div:nth-child(5) {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.Amain div .Atext {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-}
-
-.Amain div .Atext p {
-  align-self: center;
-}
-
-.Amain div .Aimg {
-  width: 50%;
-  border: 0;
-}
-
-.Amain div .Aimg img {
-  width: 50%;
-}
 
 /* FOOTER */
 footer {

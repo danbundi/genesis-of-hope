@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo3.png"
-import pic1 from "../assets/pic1.jpg"
-import pic2 from "../assets/pic2.jpeg"
-import Footer from "../components/footer";
+import logo from "../../assets/logo3.png"
+import pic1 from "../../assets/pic1.jpg"
+import pic2 from "../../assets/pic2.jpeg"
 
-const Home = () => {
+const Hero = () => {
     return (
         <>
             <nav className="Hnav">
@@ -16,7 +15,7 @@ const Home = () => {
                         <li><Link to="/videos" className="Hlink">Videos</Link></li>
                         <li><Link to="/services" className="Hlink">Services</Link></li>
                         <li><Link to="/contact" className="Hlink">Contact</Link></li>
-                        <li><Link to="/about" className="Hlink">About</Link></li>
+                        <li className="Hlink"><a href="#about"> About</a></li>
                     </ul>
                 </div>
             </nav>
@@ -33,10 +32,8 @@ const Home = () => {
                     <img src={pic2} alt="" />
                 </div>
             </div>
-
-            <Footer></Footer>
         </>
     )
 }
 
-export default Home;
+export default Hero;
